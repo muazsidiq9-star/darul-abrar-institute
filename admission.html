@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
+  <title>Admission Letter —Darul Abrār Arabic Isntitute</title>
+  <link rel="stylesheet" href="admission.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+
+<div class="letter" id="letter">
+
+  <!-- Background watermark -->
+  <img src="logo.png" class="watermark" alt="">
+
+  <!-- ① TOP BAND -->
+  <div class="header-band">
+    <span class="header-band-text">Office of the Registrar</span>
+    <span class="header-band-rule"></span>
+    <span class="header-band-text">Official Admission Document</span>
+  </div>
+
+  <!-- ② LETTERHEAD -->
+  <div class="letterhead">
+    <img src="logo.png" class="letterhead-logo" alt="Darul Abrār Logo">
+    <div class="letterhead-name">Darul Abrār International Online Institute</div>
+    <div class="letterhead-motto">Knowledge is Light</div>
+    <div class="letterhead-sub">Office of the Registrar &nbsp;·&nbsp; Admissions Division</div>
+  </div>
+
+  <!-- Ornament divider -->
+  <div class="ornament-divider">
+    <span class="ornament-glyph">✦</span>
+  </div>
+
+  <!-- ③ DOC META -->
+  <div class="doc-meta">
+    <div class="doc-meta-item">
+      <strong>Document Ref</strong>
+      <span id="docRef">—</span>
+    </div>
+    <div class="admission-sign">Admission Letter</div>
+    <div class="doc-meta-item" style="text-align:right;">
+      <strong>Date Issued</strong>
+      <span id="date">—</span>
+    </div>
+  </div>
+
+  <!-- ④ STUDENT INFO -->
+  <div class="student-section">
+    <div class="student-details-wrap">
+      <div class="student-details-title">Student Particulars</div>
+      <div class="student-details">
+        <div><span class="field-label">Matric No.</span> <span class="field-value" id="matric">—</span></div>
+        <div><span class="field-label">Full Name</span> <span class="field-value" id="fullname">—</span></div>
+        <div><span class="field-label">Email</span> <span class="field-value" id="email">—</span></div>
+        <div><span class="field-label">Country</span> <span class="field-value" id="country">—</span></div>
+        <div><span class="field-label">Level</span> <span class="field-value" id="level">—</span></div>
+      </div>
+    </div>
+
+    <div class="passport-wrap">
+      <img id="passport" class="passport" src="passport-placeholder.png" alt="Passport Photo">
+      <div class="passport-label">Passport Photo</div>
+    </div>
+  </div>
+
+  <!-- ⑤ LETTER BODY -->
+  <div class="letter-body">
+    <h3>Dear <span id="nameInline">—</span>,</h3>
+
+    <div class="subject-line">
+      <span class="subject-line-inner">
+        Offer of Provisional Admission to the <span id="level2">—</span> Programme
+      </span>
+    </div>
+
+    <p>
+      We are pleased to formally inform you that following the successful review of your registration details and academic records, you have been granted admission into <strong>Darul Abrār International Online Institute</strong>.
+    </p>
+
+    <p>
+      You have been admitted into the <strong><span id="level3">—</span></strong> programme. This admission confirms your eligibility to participate fully in the academic activities, lectures, assessments, and institutional engagements associated with your level.
+    </p>
+
+    <p>
+      The Institute remains committed to providing a structured, disciplined, and intellectually enriching environment designed to facilitate excellence in Arabic language studies. You are therefore advised to uphold the values of dedication, integrity, discipline, and academic responsibility expected of every Darul Abrār student.
+    </p>
+
+    <p>
+      Students are expected to participate actively in lectures, class engagements, continuous assessments, and all academic exercises prescribed within their programme. Regular attendance, timely submission of academic tasks, and adherence to institutional standards are fundamental requirements of this admission.
+    </p>
+
+    <p>
+      Kindly note that this admission remains provisional and subject to compliance with all academic and administrative regulations of the Institute. Failure to meet required standards, ethical expectations, or participation guidelines may affect academic standing. The Institute prays that your academic journey becomes a source of beneficial knowledge, intellectual growth, and lasting success.
+    </p>
+  </div>
+
+  <!-- ⑥ NOTICE -->
+  <div class="notice">
+    <strong>Important Notice</strong>
+    <ul>
+      <li>This letter serves as an official proof of admission to Darul Abrār International Online Institute.</li>
+      <li>All academic and administrative regulations of the Institute must be strictly observed.</li>
+      <li>Authenticity of this document may be verified using the QR code provided below.</li>
+    </ul>
+  </div>
+
+  <!-- ⑦ FOOTER -->
+  <hr class="footer-divider">
+
+  <div class="footer-section">
+    <div class="registrar">
+      <div class="registrar-title">Signed &amp; Issued by</div>
+     Darul Abrār Arabic Isntitute<br>
+      <div class="registrar-name">Swodiq Muhammad Jamiu</div>
+      Director<br>
+      <img src="sign.png" alt="Official sign">
+    </div>
+
+    <div class="qr-wrap">
+      <div class="qr">
+        <img id="qrCode" alt="Verification QR Code">
+      </div>
+      <div class="qr-label">Scan to verify</div>
+    </div>
+  </div>
+
+  <!-- ⑧ BOTTOM BAND -->
+  <div class="security-footer">
+    This is a computer-generated admission document &nbsp;·&nbsp;
+    Any alteration renders it invalid &nbsp;·&nbsp;
+    Verify authenticity via the QR code above
+  </div>
+
+  <!-- PRINT BUTTONS (screen only) -->
+  <div class="print-btn">
+    <button onclick="window.print()">Print Admission Letter</button>
+    <button onclick="downloadPDF()">Download as PDF</button>
+  </div>
+
+</div><!-- /.letter -->
+
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+<script>
+  const SUPABASE_URL = "https://ppspuopkprqufsxwkpnr.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_g7I11DNvNz7tkfFr7TAV4A_g3PO-Mai";
+  const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  /* ── Auth guard ── */
+  (function () {
+    const role   = sessionStorage.getItem("role");
+    const matric = sessionStorage.getItem("matric");
+    if (role !== "student" || !matric) {
+      alert("Student login required");
+      window.location.href = "login.html";
+    }
+  })();
+
+  /* ── Print hint ── */
+  window.onload = () => {
+    alert(
+      "ATTENTION:\n\n" +
+      "Use Google Chrome for best quality printout.\n" +
+      "This letter must be printed in colour ink.\n" +
+      "Paper Size: A4  |  Scale: 100%  |  Margins: Default\n" +
+      "For PDF → Choose \"Save as PDF\""
+    );
+  };
+
+  /* ── Helpers ── */
+  function generateDocNumber(matric) {
+    const year = new Date().getFullYear();
+    return `ABI-ADM-${year}-${matric}`;
+  }
+
+  function set(id, val) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val || "N/A";
+  }
+
+  /* ── Load data ── */
+  async function loadAdmission() {
+    const matricNumber = sessionStorage.getItem("matric");
+
+    const { data, error } = await sb
+      .from("students")
+      .select("fullname, email, matric_number, level_arabic, country, passport_url, admission_approved")
+      .eq("matric_number", matricNumber)
+      .single();
+
+    if (error || !data) return;
+
+    /* Not yet approved */
+    if (!data.admission_approved) {
+      document.getElementById("letter").style.display = "none";
+      document.body.insertAdjacentHTML("beforeend", `
+        <p style="text-align:center; margin-top:60px; font-size:1.1rem; font-family:Georgia,serif; color:#444; line-height:1.8;">
+          Your admission letter has not yet been approved by the Admin.<br>
+          Please check back later or contact the Registrar's Office.
+        </p>
+      `);
+      return;
+    }
+
+    /* Populate */
+    set("fullname",   data.fullname);
+    set("email",      data.email);
+    set("matric",     data.matric_number);
+    set("level",      data.level_arabic);
+    set("level2",     data.level_arabic);
+    set("level3",     data.level_arabic);
+    set("country",    data.country);
+    set("nameInline", data.fullname);
+    set("date",       new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }));
+
+    if (data.passport_url) {
+      document.getElementById("passport").src = data.passport_url;
+    }
+
+    const docNumber = generateDocNumber(data.matric_number);
+    set("docRef", docNumber);
+
+    const verificationURL = `https://albayaninstitute.netlify.app/verify.html?doc=${docNumber}`;
+    QRCode.toDataURL(verificationURL, function (err, url) {
+      if (!err) document.getElementById("qrCode").src = url;
+    });
+  }
+
+  function downloadPDF() {
+    alert("Choose 'Save as PDF' in the print dialog.");
+    window.print();
+  }
+
+  document.addEventListener("DOMContentLoaded", loadAdmission);
+</script>
+
+</body>
+</html>

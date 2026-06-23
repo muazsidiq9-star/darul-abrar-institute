@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
+  <title>My Payments - Darul Abrār International Online Institute</title>
+  <link rel="stylesheet" href="master.css">
+  <link rel="stylesheet" href="student-payments.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="master-nav">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="Darul Abrār Logo">
+        <span>Darul Abrār</span>
+      </a>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" data-translate="Home">Home</a>
+        <a href="about.html" data-translate="About">About</a>
+        <a href="courses.html" data-translate="Courses">Courses</a>
+        <a href="register.html" data-translate="Register">Register</a>
+        <a href="students-dashboard.html" data-translate="Dashboard">Dashboard</a>
+        <a href="payment.html" class="active" data-translate="Payment">Payment</a>
+        <a href="schedule.html" data-translate="Schedule">Schedule</a>
+        <a href="contact.html" data-translate="Contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE BANNER -->
+  <header class="spm-banner" style="background-image: url('background-payment.jpg');">
+    <div class="spm-banner-overlay"></div>
+    <div class="spm-banner-content">
+      <img src="logo.png" class="header-logo" alt="Darul Abrār Logo">
+      <span class="spm-eyebrow">
+        <i class="fa-solid fa-wallet"></i>
+        <span data-translate="My Payments">My Payments</span>
+      </span>
+      <h1 data-translate="My Payments">My Payments</h1>
+      <p data-translate="View your payment history, total paid, and pending payments">
+        View your payment history, total paid, and pending payments
+      </p>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="spm-main">
+
+    <!-- OVERDUE ALERT -->
+    <div id="overdueAlertContainer"></div>
+
+    <!-- PAYMENT SUMMARY -->
+    <section class="spm-section">
+      <div class="spm-section-header">
+        <div class="spm-section-icon">
+          <i class="fa-solid fa-chart-pie"></i>
+        </div>
+        <h2 data-translate="Payment Summary">Payment Summary</h2>
+      </div>
+
+      <div class="spm-stats-grid">
+
+        <div class="stat-card">
+          <div class="stat-icon payments">
+            <i class="fa-solid fa-credit-card"></i>
+          </div>
+          <div class="stat-info">
+            <h3 id="paymentStatus">--</h3>
+            <p id="paymentMonth" data-translate="Current Month">Current Month</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#dcfce7; color:#15803d;">
+            <i class="fa-solid fa-money-bill-wave"></i>
+          </div>
+          <div class="stat-info">
+            <h3 id="monthlyAmount">₦0</h3>
+            <p id="amountMonth" data-translate="Month Amount">Month Amount</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PAYMENT HISTORY -->
+    <section class="spm-section">
+      <div class="spm-section-header">
+        <div class="spm-section-icon">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+        </div>
+        <h2 data-translate="Payment History">Payment History</h2>
+      </div>
+
+      <div class="spm-history-list" id="paymentHistory">
+        <!-- JS injects payment cards here -->
+      </div>
+    </section>
+
+    <!-- DOWNLOAD BUTTONS -->
+    <section class="spm-download-strip">
+      <button id="downloadReceiptBtn" class="spm-download-btn">
+        <i class="fa-solid fa-file-arrow-down"></i>
+        <span data-translate="Download Latest Receipt (PDF)">Download Latest Receipt (PDF)</span>
+      </button>
+      <button id="downloadAllReceiptsBtn" class="spm-download-btn spm-download-btn--outline">
+        <i class="fa-solid fa-files"></i>
+        <span data-translate="Download All Receipts (PDF)">Download All Receipts (PDF)</span>
+      </button>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- FOOTER -->
+  <footer>
+    <p data-translate="Darul Abrār International Online Institute">Darul Abrār International Online Institute</p>
+    <p>
+      <span data-translate="Email">Email</span>: darainonline2@gmail.com &nbsp;|&nbsp;
+      <span data-translate="Phone: +234 810 521 5518">Phone: +234 810 521 5518</span>
+    </p>
+    <p id="footerCopyright"></p>
+    <a href="privacy.html" data-translate="Privacy Policy">Privacy Policy</a>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/2348105215518" class="whatsapp-float" target="_blank" rel="noopener">
+    <img src="whatsapp-icon.png" alt="WhatsApp">
+  </a>
+
+  <script src="translate.js"></script>
+  <script>
+    
+
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('show');
+    }
+    document.addEventListener('click', function (e) {
+      const nav = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      if (!nav.contains(e.target) && !hamburger.contains(e.target)) nav.classList.remove('show');
+    });
+  </script>
+
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+  <script>
+    const sb = supabase.createClient(
+      "https://ppspuopkprqufsxwkpnr.supabase.co",
+      "sb_publishable_g7I11DNvNz7tkfFr7TAV4A_g3PO-Mai"
+    );
+
+    /* ===== STUDENT GUARD ===== */
+    (function () {
+      const role = sessionStorage.getItem("role");
+      const matric = sessionStorage.getItem("matric");
+      if (role !== "student" || !matric) {
+        alert(t("Student login required"));
+        window.location.href = "login.html";
+      }
+    })();
+
+    /* ===== LOAD PAYMENTS ===== */
+    async function loadPayments() {
+      const matric = sessionStorage.getItem("matric");
+      if (!matric) return;
+
+      try {
+        const { data: payments, error } = await sb
+          .from("payments")
+          .select("amount, month, status, created_at, id")
+          .eq("matric_number", matric)
+          .order("created_at", { ascending: false });
+        if (error) throw error;
+
+        const { data: outstanding } = await sb
+          .from("student_fee_status")
+          .select("month, amount_due")
+          .eq("matric_number", matric)
+          .eq("status", "unpaid");
+
+        const uniqueMonths = [...new Set((outstanding || []).map(o => o.month))];
+        const totalOutstanding = (outstanding || []).reduce((sum, item) => sum + Number(item.amount_due), 0);
+        const outstandingMonths = uniqueMonths.length > 2
+          ? `${uniqueMonths.slice(0, 2).join(", ")} +${uniqueMonths.length - 2} more`
+          : uniqueMonths.join(", ");
+
+        /* Overdue alert */
+        const alertContainer = document.getElementById("overdueAlertContainer");
+        if (totalOutstanding > 0) {
+          alertContainer.innerHTML = `
+            <div class="spm-fee-alert">
+              <div class="spm-fee-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+              <div class="spm-fee-text">
+                <strong>${tmpl("outstanding_payment")}</strong>
+                <span>${tmpl("outstanding_message", {
+                  amount: `<span class="amount-red">₦${totalOutstanding.toLocaleString()}</span>`,
+                  months: `<b>${outstandingMonths}</b>`
+                })}</span>
+              </div>
+              <button class="spm-pay-btn" onclick="goToPayments()">
+                <i class="fa-solid fa-credit-card"></i>
+                ${tmpl("pay_now")}
+              </button>
+            </div>`;
+        } else {
+          alertContainer.innerHTML = "";
+        }
+
+        /* Stats */
+        const now = new Date();
+        const monthName = now.toLocaleString("default", { month: "long" });
+        const monthlyPayments = payments?.filter(p => p.status === "paid" && p.month === monthName) || [];
+        const monthlyTotal = monthlyPayments.reduce((sum, p) => sum + Number(p.amount), 0);
+        const lastPayment = payments?.find(p => p.status === "paid");
+        const lastPaidMonth = lastPayment?.month || null;
+
+        let paymentStatus, subText;
+        if (monthlyTotal > 0) {
+          paymentStatus = tmpl("paid");
+          subText = tmpl("payment_month", { month: monthName });
+        } else if (lastPaidMonth) {
+          paymentStatus = tmpl("unpaid");
+          subText = tmpl("last_paid", { month: lastPaidMonth });
+        } else {
+          paymentStatus = tmpl("unpaid");
+          subText = tmpl("no_payment_yet");
+        }
+
+        document.getElementById("paymentStatus").textContent = paymentStatus;
+        document.getElementById("paymentMonth").textContent = subText;
+        document.getElementById("monthlyAmount").textContent = "₦" + monthlyTotal.toLocaleString();
+        document.getElementById("amountMonth").textContent = tmpl("month_amount", { month: monthName });
+
+        /* History */
+        const history = document.getElementById("paymentHistory");
+        if (!payments || payments.length === 0) {
+          history.innerHTML = `<p class="spm-empty">${t("No payments found.")}</p>`;
+        } else {
+          history.innerHTML = payments.map(p => `
+            <div class="spm-history-card ${p.status}">
+              <div class="spm-history-icon ${p.status === 'paid' ? 'paid' : p.status === 'pending' ? 'pending' : 'failed'}">
+                <i class="fa-solid fa-${p.status === 'paid' ? 'circle-check' : p.status === 'pending' ? 'clock' : 'circle-xmark'}"></i>
+              </div>
+              <div class="spm-history-body">
+                <div class="spm-history-top">
+                  <span class="spm-history-month">${p.month.toUpperCase()}</span>
+                  <span class="spm-history-badge ${p.status}">${t(p.status)}</span>
+                </div>
+                <div class="spm-history-amount">₦${Number(p.amount).toLocaleString()}</div>
+                <div class="spm-history-date">${new Date(p.created_at).toLocaleString()}</div>
+              </div>
+            </div>
+          `).join("");
+        }
+
+      } catch (err) {
+        console.error("Failed to load payments:", err);
+        document.getElementById("paymentHistory").innerHTML =
+          `<p class="spm-empty" style="color:#dc2626">${t("Failed to load payments")}</p>`;
+      }
+    }
+
+    function goToPayments() { window.location.href = "payment.html"; }
+
+    document.addEventListener("DOMContentLoaded", loadPayments);
+
+    /* ===== WATERMARK ===== */
+    function addWatermark(doc, text) {
+      doc.setTextColor(220, 220, 220);
+      doc.setFontSize(10);
+      doc.setFont("helvetica", "bold");
+      for (let y = 50; y < 800; y += 40) {
+        for (let x = 40; x < doc.internal.pageSize.getWidth(); x += 100) {
+          doc.text(text, x, y, { angle: 45 });
+        }
+      }
+      doc.setTextColor(0, 0, 0);
+    }
+
+    /* ===== GENERATE PDF ===== */
+    async function generateReceiptPDF(payments, student, options = { all: false }) {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ orientation: "portrait", unit: "pt", format: "a4" });
+      const pageWidth = doc.internal.pageSize.getWidth();
+
+      for (let i = 0; i < payments.length; i++) {
+        if (!options.all && i > 0) break;
+        const payment = payments[i];
+
+        addWatermark(doc, "Darul Abrār International Online Institute");
+
+        const logo = new Image();
+        logo.src = "logo.png";
+        await new Promise(resolve => {
+          logo.onload = () => {
+            const logoWidth = 80;
+            const logoHeight = (logo.height / logo.width) * logoWidth;
+            doc.addImage(logo, "PNG", pageWidth / 2 - logoWidth / 2, 20, logoWidth, logoHeight);
+            resolve();
+          };
+          logo.onerror = resolve;
+        });
+
+        doc.setFontSize(18); doc.setFont("helvetica", "bold"); doc.setTextColor("#004211");
+        doc.text("Darul Abrār International Online Institute", pageWidth / 2, 120, { align: "center" });
+        doc.setFontSize(14); doc.setFont("helvetica", "normal"); doc.setTextColor("#000000");
+        doc.text("Payment Receipt", pageWidth / 2, 140, { align: "center" });
+
+        let startY = 170;
+        doc.setFontSize(12);
+        doc.text(`Name: ${student.fullname}`, 40, startY);
+        doc.text(`Student ID: ${student.matric_number}`, 300, startY);
+        startY += 20;
+        doc.text(`Level: ${student.level_arabic}`, 40, startY);
+        doc.text(`Email: ${student.email}`, 300, startY);
+
+        startY += 30;
+        doc.setFontSize(14); doc.setFont("helvetica", "bold"); doc.setTextColor("#2E7D32");
+        doc.text(`Amount Paid: ₦${Number(payment.amount).toLocaleString()}`, 40, startY);
+        doc.text(`Month Paid: ${payment.month.toLocaleString()}`, 43, startY + 20);
+
+        startY += 25;
+        doc.setFontSize(12); doc.setFont("helvetica", "normal"); doc.setTextColor("#424298");
+        doc.text(`Payment Date: ${new Date(payment.created_at).toLocaleDateString()}`, 40, startY + 22);
+        doc.text(`Status: ${payment.status.toUpperCase()}`, 300, startY + 22);
+
+        startY += 40;
+        doc.setFontSize(12); doc.setTextColor("#000000");
+        doc.text(
+          "Thank you for your payment! Your support helps us continue providing quality Arabic education.\n\n" +
+          "We appreciate your commitment to learning the Arabic language and the Qur'an. May Allah place barakah in your knowledge, grant you understanding, and reward you abundantly.",
+          40, startY + 5, { maxWidth: pageWidth - 40 }
+        );
+
+        startY += 70;
+        const qrCanvas = document.createElement("canvas");
+        await QRCode.toCanvas(qrCanvas, `${student.matric_number}|${payment.id}|${payment.amount}|${student.fullname}`, { width: 80 });
+        doc.addImage(qrCanvas.toDataURL("image/png"), "PNG", pageWidth - 120, startY - 2, 80, 80);
+
+        startY -= 45;
+        const sign = new Image(); sign.src = "sign.png";
+        await new Promise(resolve => {
+          sign.onload = () => { doc.addImage(sign, "PNG", 40, startY + 30, 160, 70); resolve(); };
+          sign.onerror = resolve;
+        });
+
+        doc.setFontSize(12); doc.setFont("helvetica", "bold");
+        doc.text("Ustadh Swodiq Muhammad Jamiu", 40, startY + 98);
+        doc.setFont("helvetica", "normal");
+        doc.text("Director, Darul Abrār  International Institute", 40, startY + 115);
+
+        doc.setFontSize(10); doc.setFont("helvetica", "italic");
+        doc.text("This is a computer-generated receipt.", pageWidth / 2, 780, { align: "center" });
+
+        if (options.all && i < payments.length - 1) doc.addPage();
+      }
+
+      doc.save(options.all
+        ? `Receipts_${student.matric_number}.pdf`
+        : `Receipt_${student.matric_number}_${payments[0].id}.pdf`);
+    }
+
+    /* ===== DOWNLOAD HANDLERS ===== */
+    async function downloadReceipt(single = true) {
+      const matric = sessionStorage.getItem("matric");
+      if (!matric) return alert("Student info missing");
+
+      const { data: student, error: studentError } = await sb
+        .from("students").select("fullname, matric_number, level_arabic, email")
+        .eq("matric_number", matric).single();
+      if (studentError) return alert("Failed to fetch student info");
+
+      const { data: payments, error: paymentError } = await sb
+        .from("payments").select("*").eq("matric_number", matric)
+        .order("created_at", { ascending: true });
+      if (paymentError || !payments) return alert("Failed to fetch payments");
+
+      await generateReceiptPDF(payments, student, { all: !single });
+    }
+
+    document.getElementById("downloadReceiptBtn").addEventListener("click", () => downloadReceipt(true));
+    document.getElementById("downloadAllReceiptsBtn")?.addEventListener("click", () => downloadReceipt(false));
+  </script>
+</body>
+</html>

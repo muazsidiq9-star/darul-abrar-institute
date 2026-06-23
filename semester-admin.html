@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
+  <title>Semester Management | Darul Abrār International Online Institute</title>
+  <link rel="stylesheet" href="master.css">
+  <link rel="stylesheet" href="semester-admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="master-nav">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="Darul Abrār Logo">
+        <span>Darul Abrār</span>
+      </a>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" data-translate="Home">Home</a>
+        <a href="about.html" data-translate="About">About</a>
+        <a href="courses.html" data-translate="Courses">Courses</a>
+        <a href="register.html" data-translate="Register">Register</a>
+        <a href="students-dashboard.html" data-translate="Student Dashboard">Student Dashboard</a>
+        <a href="admin-dashboard.html" data-translate="Admin Dashboard">Admin Dashboard</a>
+        <a href="admin-inbox.html">
+  <span data-translate="Emails">Emails</span>
+  <span id="unreadCounter" class="unread-badge">0</span>
+</a>
+        <a href="semester-admin.html" class="active" data-translate="Semester Work">Semester Work</a>
+        <a href="payment.html" data-translate="Payments">Payments</a>
+        <a href="schedule.html" data-translate="Schedule">Schedule</a>
+        <a href="contact.html" data-translate="Contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header" style="background: url('background.mp4') center/cover no-repeat; background-color: var(--primary-dark);">
+    <div class="header-overlay">
+      <img src="logo.png" class="header-logo" alt="Darul Abrār Logo">
+      <h1 data-translate="Semester Management">Semester Management</h1>
+      <p data-translate="Manage Activities & Course Outlines">Manage Activities &amp; Course Outlines</p>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="sem-container">
+
+      <!-- FORM SECTION -->
+      <section class="dash-section">
+        <div class="section-header">
+          <h2 data-translate="Add Entry">
+            <i class="fa-solid fa-circle-plus"></i>
+            <span data-translate="Add Entry">Add Entry</span>
+          </h2>
+        </div>
+
+        <div class="sem-form-card card">
+          <form id="semesterForm">
+            <div class="sem-form-grid">
+
+              <div class="form-group">
+                <label for="semester" data-translate="Semester">Semester</label>
+                <input type="text" id="semester" placeholder="e.g., Spring 2025"
+                       data-translate-placeholder="e.g., Spring 2025" required>
+              </div>
+
+              <div class="form-group">
+                <label for="type" data-translate="Type">Type</label>
+                <select id="type">
+                  <option value="activity" data-translate="Activity">Activity</option>
+                  <option value="course_outline" data-translate="Course Outline">Course Outline</option>
+                </select>
+              </div>
+
+              <div class="form-group sem-full">
+                <label for="title" data-translate="Title">Title</label>
+                <input type="text" id="title" placeholder="Entry Title"
+                       data-translate-placeholder="Entry Title" required>
+              </div>
+
+              <div class="form-group sem-full">
+                <label for="description" data-translate="Description">Description</label>
+                <textarea id="description" rows="4" placeholder="Enter description..."
+                          data-translate-placeholder="Enter description..." required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="start_date" data-translate="Start Date">Start Date</label>
+                <input type="date" id="start_date">
+              </div>
+
+              <div class="form-group">
+                <label for="end_date" data-translate="End Date">End Date</label>
+                <input type="date" id="end_date">
+              </div>
+
+            </div>
+
+            <div class="sem-form-actions">
+              <button type="submit" class="btn btn-save" id="saveEntry">
+                <i class="fa-solid fa-floppy-disk"></i>
+                <span data-translate="Save Entry">Save Entry</span>
+              </button>
+              <button type="button" class="btn btn-cancel" id="cancelEdit">
+                <i class="fa-solid fa-xmark"></i>
+                <span data-translate="Cancel Edit">Cancel Edit</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- FILTERS + ENTRIES SECTION -->
+      <section class="dash-section">
+        <div class="section-header">
+          <h2>
+            <i class="fa-solid fa-list"></i>
+            <span data-translate="All Entries">All Entries</span>
+          </h2>
+        </div>
+
+        <!-- Filters Bar -->
+        <div class="filters-bar card">
+          <input type="text" id="searchInput"
+                 placeholder="🔍 Search title..."
+                 data-translate-placeholder="🔍 Search title...">
+          <select id="filterSemester">
+            <option value="" data-translate="All Semesters">All Semesters</option>
+            <option value="Harmattan" data-translate="Harmattan">Harmattan</option>
+            <option value="Spring" data-translate="Spring">Spring</option>
+          </select>
+          <select id="filterType">
+            <option value="" data-translate="All Types">All Types</option>
+          </select>
+        </div>
+
+        <!-- Entries -->
+        <div id="entriesContainer"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- UNDO TOAST -->
+  <div class="undo-toast" id="undoToast" style="display:none;">
+    <span id="undoMessage" data-translate="Entry deleted.">Entry deleted.</span>
+    <button id="undoBtn" data-translate="Undo">Undo</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p data-translate="Darul Abrār International Online Institute">Darul Abrār International Online Institute</p>
+    <p>
+      <span data-translate="Email">Email</span>: darainonline2@gmail.com &nbsp;|&nbsp;
+      <span data-translate="Phone: +234 810 521 5518">Phone: +234 810 521 5518</span>
+    </p>
+    <p id="footerCopyright"></p>
+    <a href="privacy.html" data-translate="Privacy Policy">Privacy Policy</a>
+  </footer>
+
+  <a href="https://wa.me/2348105215518" class="whatsapp-float" target="_blank" rel="noopener">
+    <img src="whatsapp-icon.png" alt="WhatsApp">
+  </a>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    
+
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('show');
+    }
+    document.addEventListener('click', function (e) {
+      const nav = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+        nav.classList.remove('show');
+      }
+    });
+  </script>
+  <script src="translate.js"></script>
+  <script src="semester-admin.js"></script>
+</body>
+</html>

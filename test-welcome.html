@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
+  <title>Test/Exam Welcome - Darul Abrār International Online Institute</title>
+  <link rel="stylesheet" href="master.css">
+  <link rel="stylesheet" href="test-welcome.css">
+  <link rel="stylesheet" href="course-pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="master-nav">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="Darul Abrār Logo">
+        <span>Darul Abrār</span>
+      </a>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" data-translate="Home">Home</a>
+        <a href="courses.html" data-translate="Courses">Courses</a>
+        <a href="students-dashboard.html" data-translate="Student Dashboard">Student Dashboard</a>
+        <a href="contact.html" data-translate="Contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================================================
+       PAGE CONTENT WRAPPER (JS / layout dep.)
+  ================================================ -->
+  <div class="page-content">
+
+    <!-- HEADER BANNER -->
+    <header class="hall-header" style="background-image: url('background-main.jpg');">
+      <div class="hall-header-overlay"></div>
+      <div class="header-overlay">
+        <!-- Status badge — changes colour via JS-set class on #statusBadge -->
+        <div class="tw-status-badge" id="statusBadge">
+          <i class="fa-solid fa-clock tw-badge-icon" id="statusIcon"></i>
+          <span id="statusBadgeText"></span>
+        </div>
+
+        <h1 id="examTitle" data-no-translate="true">Loading Test/Exam...</h1>
+        <p id="examMessage" data-no-translate="true">
+          Please wait while we fetch your upcoming test/exam details
+        </p>
+      </div>
+    </header>
+
+    <!-- ================================================
+         EXAM INFO CARD  (JS injects rows into #examInfo)
+    ================================================ -->
+    <section class="exam-info" id="examInfo">
+      <!-- Loading skeleton shown before JS fills content -->
+      <div class="tw-skeleton" id="examSkeleton">
+        <div class="tw-skel-row"></div>
+        <div class="tw-skel-row short"></div>
+        <div class="tw-skel-row"></div>
+        <div class="tw-skel-row short"></div>
+        <div class="tw-skel-row"></div>
+        <div class="tw-skel-row short"></div>
+      </div>
+    </section>
+
+    <!-- RULES CARD -->
+    <div class="tw-rules-card">
+      <h3 class="tw-rules-title">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span data-translate="Before You Begin">Before You Begin</span>
+      </h3>
+      <ul class="tw-rules-list">
+        <li>
+          <i class="fa-solid fa-check-circle"></i>
+          <span data-translate="Ensure you have a stable internet connection before starting.">
+            Ensure you have a stable internet connection before starting.
+          </span>
+        </li>
+        <li>
+          <i class="fa-solid fa-check-circle"></i>
+          <span data-translate="Do not refresh or close the page during the exam.">
+            Do not refresh or close the page during the exam.
+          </span>
+        </li>
+        <li>
+          <i class="fa-solid fa-check-circle"></i>
+          <span data-translate="Answer all questions before the timer runs out.">
+            Answer all questions before the timer runs out.
+          </span>
+        </li>
+        <li>
+          <i class="fa-solid fa-check-circle"></i>
+          <span data-translate="Each question can only be answered once. Review before submitting.">
+            Each question can only be answered once. Review before submitting.
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ATTEMPT BUTTON -->
+    <div class="tw-btn-wrap">
+      <button id="attemptBtn" class="btn-primary" disabled data-no-translate="true">
+        Loading...
+      </button>
+    </div>
+
+  </div><!-- end .page-content -->
+
+  <!-- FOOTER -->
+  <footer>
+    <p data-translate="Darul Abrār International Online Institute">Darul Abrār International Online Institute</p>
+    <p>
+      <span data-translate="Email">Email</span>: darainonline2@gmail.com &nbsp;|&nbsp;
+      <span data-translate="Phone: +234 810 521 5518">Phone: +234 810 521 5518</span>
+    </p>
+    <p id="footerCopyright"></p>
+    <a href="privacy.html" data-translate="Privacy Policy">Privacy Policy</a>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/2348105215518" class="whatsapp-float" target="_blank" rel="noopener">
+    <img src="whatsapp-icon.png" alt="WhatsApp">
+  </a>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+  <script>
+    
+
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('show');
+    }
+    document.addEventListener('click', function (e) {
+      const nav       = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      if (!nav.contains(e.target) && !hamburger.contains(e.target)) nav.classList.remove('show');
+    });
+  </script>
+
+  <script>
+    const SUPABASE_URL = "https://ppspuopkprqufsxwkpnr.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_g7I11DNvNz7tkfFr7TAV4A_g3PO-Mai";
+    const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    const matric    = sessionStorage.getItem("matric");
+    const examTitle = document.getElementById("examTitle");
+    const examMsg   = document.getElementById("examMessage");
+    const badge     = document.getElementById("statusBadge");
+    const badgeTxt  = document.getElementById("statusBadgeText");
+    const badgeIcon = document.getElementById("statusIcon");
+    const skeleton  = document.getElementById("examSkeleton");
+
+    /* ── Set badge state ── */
+    function setBadge(state) {
+      badge.className = "tw-status-badge";
+      const map = {
+        ongoing:    { cls: "badge-ongoing",  icon: "fa-solid fa-play-circle",          label: "Ongoing"           },
+        upcoming:   { cls: "badge-upcoming", icon: "fa-solid fa-clock",                label: "Upcoming"          },
+        waiting:    { cls: "badge-waiting",  icon: "fa-solid fa-hourglass-half",        label: "Awaiting Activation" },
+        ended:      { cls: "badge-ended",    icon: "fa-solid fa-circle-xmark",         label: "Ended"             },
+        none:       { cls: "badge-none",     icon: "fa-solid fa-calendar-times",       label: "No Exam"           },
+        loading:    { cls: "badge-loading",  icon: "fa-solid fa-spinner fa-spin",      label: "Loading..."        },
+      };
+      const m = map[state] || map.loading;
+      badge.classList.add(m.cls);
+      badgeIcon.className = m.icon + " tw-badge-icon";
+      badgeTxt.textContent = m.label;
+    }
+
+    /* ── Populate exam info card ── */
+    function fillExamInfo(exam, startTime, endTime) {
+      skeleton.style.display = "none";
+      const el = document.getElementById("examInfo");
+      el.innerHTML = `
+        <div class="tw-info-grid">
+          <div class="tw-info-item">
+            <span class="tw-info-label"><i class="fa-solid fa-layer-group"></i> ${t("Level:")}</span>
+            <span class="tw-info-value">${exam.level_arabic}</span>
+          </div>
+          <div class="tw-info-item">
+            <span class="tw-info-label"><i class="fa-solid fa-calendar-alt"></i> ${t("Semester:")}</span>
+            <span class="tw-info-value">${exam.semester}</span>
+          </div>
+          <div class="tw-info-item">
+            <span class="tw-info-label"><i class="fa-solid fa-book-open"></i> ${t("Course:")}</span>
+            <span class="tw-info-value">${exam.course}</span>
+          </div>
+          <div class="tw-info-item">
+            <span class="tw-info-label"><i class="fa-solid fa-tag"></i> ${t("Type:")}</span>
+            <span class="tw-info-value tw-type-badge">${exam.type}</span>
+          </div>
+          <div class="tw-info-item">
+            <span class="tw-info-label"><i class="fa-solid fa-stopwatch"></i> ${t("Duration:")}</span>
+            <span class="tw-info-value">${exam.duration_minutes} ${t("minutes")}</span>
+          </div>
+          <div class="tw-info-item">
+            <span class="tw-info-label"><i class="fa-solid fa-circle-dot"></i> ${t("Status:")}</span>
+            <span class="tw-info-value">${exam.status}</span>
+          </div>
+          <div class="tw-info-item">
+            <span class="tw-info-label"><i class="fa-solid fa-hourglass-start"></i> ${t("Start Time:")}</span>
+            <span class="tw-info-value">${startTime.toLocaleString()}</span>
+          </div>
+          <div class="tw-info-item">
+            <span class="tw-info-label"><i class="fa-solid fa-hourglass-end"></i> ${t("End Time:")}</span>
+            <span class="tw-info-value">${endTime.toLocaleString()}</span>
+          </div>
+        </div>
+      `;
+      if (window.reTranslate) reTranslate();
+    }
+
+    /* ── Button / header UI ── */
+    function setExamReadyUI(exam, startTime, endTime, now) {
+      const btn = document.getElementById("attemptBtn");
+
+      if (now >= startTime && now <= endTime && exam.is_active === true) {
+        setBadge("ongoing");
+        examTitle.textContent  = `Ongoing ${exam.type}`;
+        examMsg.textContent    = "Your assessment is currently ongoing. Click below to begin";
+        btn.disabled           = false;
+        btn.setAttribute("data-no-translate", "true");
+        btn.innerHTML          = `<i class="fa-solid fa-pen-clip"></i> Attempt Test/Exam`;
+        btn.classList.add("btn-active");
+
+      } else if (now < startTime) {
+        setBadge("upcoming");
+        examTitle.textContent  = `Upcoming ${exam.type}`;
+        examMsg.textContent    = `Scheduled to start on ${startTime.toLocaleString()}.`;
+        btn.disabled           = true;
+        btn.setAttribute("data-no-translate", "true");
+        btn.innerHTML          = `<i class="fa-solid fa-lock"></i> Not Yet Available`;
+
+      } else if (now >= startTime && exam.is_active === false) {
+        setBadge("waiting");
+        examTitle.textContent  = `${exam.type} Not Yet Activated`;
+        examMsg.textContent    = "Please wait for your instructor to activate this assessment";
+        btn.disabled           = true;
+        btn.setAttribute("data-no-translate", "true");
+        btn.innerHTML          = `<i class="fa-solid fa-hourglass-half"></i> Waiting Activation`;
+
+      } else if (now > endTime) {
+        setBadge("ended");
+        examTitle.textContent  = `${exam.type} Ended`;
+        examMsg.textContent    = "This assessment has ended";
+        btn.disabled           = true;
+        btn.setAttribute("data-no-translate", "true");
+        btn.innerHTML          = `<i class="fa-solid fa-circle-xmark"></i> Closed`;
+      }
+
+      btn.style.display = "inline-flex";
+    }
+
+    /* ── Main fetch ── */
+    async function fetchUpcomingExam() {
+      if (!matric) {
+        alert("Student login required");
+        window.location.href = "login.html";
+        return;
+      }
+
+      try {
+        const { data: student, error: studentErr } = await sb
+          .from("students")
+          .select("level_arabic")
+          .eq("matric_number", matric)
+          .single();
+        if (studentErr) throw studentErr;
+
+        const { data: exams, error: examsErr } = await sb
+          .from("assessments")
+          .select("*")
+          .eq("level_arabic", student.level_arabic)
+          .order("start_time", { ascending: true });
+        if (examsErr) throw examsErr;
+
+        if (!exams || exams.length === 0) {
+          setBadge("none");
+          skeleton.style.display = "none";
+          examTitle.textContent = "No Test / Exam";
+          examMsg.textContent   = "There is no scheduled test or exam at the moment";
+          return;
+        }
+
+        const now  = new Date();
+        const exam =
+          exams.find(e => new Date(e.start_time) <= now && new Date(e.end_time) >= now && e.is_active === true) ||
+          exams.find(e => new Date(e.start_time) > now) ||
+          exams.find(e => new Date(e.start_time) <= now && new Date(e.end_time) >= now && e.is_active === false) ||
+          null;
+
+        if (!exam) {
+          setBadge("none");
+          skeleton.style.display = "none";
+          examTitle.textContent = "No Active Test / Exam";
+          examMsg.textContent   = "Please check back later";
+          return;
+        }
+
+        sessionStorage.setItem("expectedAssessmentType", exam.type.toLowerCase());
+
+        const startTime = new Date(exam.start_time);
+        const endTime   = new Date(exam.end_time);
+
+        fillExamInfo(exam, startTime, endTime);
+        setExamReadyUI(exam, startTime, endTime, now);
+
+        const btn = document.getElementById("attemptBtn");
+        btn.onclick = async () => {
+          if (btn.disabled) return;
+          btn.disabled  = true;
+          btn.innerHTML = `<span class="spinner" data-no-translate="true"></span><span data-no-translate="true"> Loading...</span>`;
+          await new Promise(r => setTimeout(r, 100));
+          sessionStorage.setItem("examId", exam.id);
+          window.location.href = "test-hall.html";
+        };
+
+      } catch (err) {
+        console.error(err);
+        setBadge("none");
+        skeleton.style.display = "none";
+        examTitle.textContent = "Error fetching exam";
+        examMsg.textContent   = "Please try again later";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      setBadge("loading");
+      const btn = document.getElementById("attemptBtn");
+      btn.setAttribute("data-no-translate", "true");
+      btn.innerHTML = "Loading...";
+      btn.disabled  = true;
+      await fetchUpcomingExam();
+      if (window.reTranslate) reTranslate();
+    });
+  </script>
+
+  <script src="translate.js"></script>
+</body>
+</html>

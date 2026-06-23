@@ -1,0 +1,526 @@
+/* ============================================================
+   Darul Abrār — STUDENT PROFILE (student-profile.css)
+============================================================ */
+
+html, body { overflow-x: hidden; }
+
+
+/* ============================================================
+   PAGE BANNER
+============================================================ */
+.sp-banner {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.sp-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.48) 0%, rgba(0,60,20,0.68) 100%);
+  z-index: 1;
+}
+
+.sp-banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 36px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sp-banner-content .header-logo {
+  width: 70px;
+  height: auto;
+  margin-bottom: 12px;
+  animation: gentlePulse 3s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.05); }
+}
+
+.sp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #bbf0f7;
+  margin-bottom: 10px;
+}
+
+.sp-banner-content h1 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.sp-banner-content p {
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  color: #dff4f5;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+
+/* ============================================================
+   MAIN LAYOUT
+============================================================ */
+.sp-main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 20px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+
+/* ============================================================
+   PROFILE CARD
+============================================================ */
+.sp-profile-card {
+  background: var(--card-color);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Avatar */
+.sp-avatar-wrap {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.sp-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-light);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  transition: filter 0.2s;
+  display: block;
+}
+
+.sp-avatar-wrap:hover .sp-avatar { filter: brightness(0.85); }
+
+.sp-avatar-hint {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 28px;
+  height: 28px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Full name */
+.sp-fullname {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin: 0;
+  text-align: center;
+}
+
+/* Info grid */
+.sp-info-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sp-info-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+
+.sp-info-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.sp-info-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.sp-info-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.sp-info-value {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-color);
+  word-break: break-all;
+}
+
+/* Edit button */
+.sp-edit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 26px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.sp-edit-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   CHANGE PASSWORD CARD
+============================================================ */
+.sp-password-card {
+  background: var(--card-color);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.sp-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.sp-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  background: var(--primary-xlight);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.sp-card-header h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.sp-password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sp-password-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sp-password-field label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sp-input-wrap {
+  position: relative;
+}
+
+.sp-input-wrap input {
+  width: 100%;
+  padding-right: 42px;
+}
+
+.sp-eye {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.sp-eye:hover { color: var(--primary); }
+
+.sp-update-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 8px;
+  padding: 11px 24px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  align-self: flex-start;
+}
+
+.sp-update-btn:hover { background: var(--primary-dark); }
+
+.sp-password-msg {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+
+/* ============================================================
+   EDIT PROFILE MODAL
+============================================================ */
+.sp-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.sp-modal-box {
+  background: var(--card-color);
+  border-radius: 16px;
+  padding: 28px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 88vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.sp-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  border-radius: 7px;
+  width: 30px;
+  height: 30px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.sp-modal-close:hover { background: #fca5a5; }
+
+.sp-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.sp-modal-header i {
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.sp-modal-header h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.sp-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sp-modal-form label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: -8px;
+}
+
+.sp-passport-preview {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid var(--border-light);
+  display: block;
+}
+
+.sp-save-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 24px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 6px;
+}
+
+.sp-save-btn:hover { background: var(--primary-dark); }
+
+
+/* ============================================================
+   PASSPORT VIEWER MODAL
+============================================================ */
+.sp-viewer-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.82);
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.sp-viewer-modal.show {
+  display: flex;
+}
+
+.sp-viewer-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 88vh;
+}
+
+.sp-viewer-content img {
+  max-width: 100%;
+  max-height: 82vh;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  display: block;
+}
+
+.sp-viewer-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 34px;
+  height: 34px;
+  background: #dc2626;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: background 0.2s;
+}
+
+.sp-viewer-close:hover { background: #b91c1c; }
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 768px) {
+  .sp-banner { min-height: 240px; }
+  .sp-banner-content .header-logo { width: 56px; }
+  .sp-banner-content h1 { font-size: 1.4rem; }
+
+  .sp-profile-card { padding: 24px 18px; }
+  .sp-password-card { padding: 22px 18px; }
+
+  .sp-update-btn { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .sp-main { padding: 28px 14px 48px; }
+  .sp-avatar { width: 90px; height: 90px; }
+  .sp-modal-box { padding: 22px 16px; }
+}
+
+/* Force phone, matric, email values to always read LTR */
+.sp-info-value {
+  direction: ltr;
+  unicode-bidi: embed;
+  display: block;
+  text-align: left;
+}
+
+[dir="rtl"] .sp-info-value {
+  text-align: right; /* keep it visually on the right side in RTL but read LTR */
+}

@@ -1,0 +1,430 @@
+/* ============================================================
+   DARUL ABRĀR — STUDENT GRADES (student-grades.css)
+============================================================ */
+
+html, body { overflow-x: hidden; }
+
+
+/* ============================================================
+   PAGE BANNER
+============================================================ */
+.sg-banner {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.sg-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.48) 0%, rgba(0,60,20,0.68) 100%);
+  z-index: 1;
+}
+
+.sg-banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 36px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sg-banner-content .header-logo {
+  width: 70px;
+  height: auto;
+  margin-bottom: 12px;
+  animation: gentlePulse 3s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.05); }
+}
+
+.sg-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #bbf7d0;
+  margin-bottom: 10px;
+}
+
+.sg-banner-content h1 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.sg-banner-content p {
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  color: #dff5e8;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+
+/* ============================================================
+   MAIN
+============================================================ */
+.sg-main {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 36px 20px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+
+/* ============================================================
+   CONTROLS
+============================================================ */
+.sg-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;           /* keep side by side on desktop */
+  align-items: center;
+}
+
+.sg-search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 0;                /* allow shrinking */
+}
+
+.sg-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  pointer-events: none;
+  /* flip icon position in RTL */
+}
+
+[dir="rtl"] .sg-search-icon {
+  left: auto;
+  right: 12px;
+}
+
+.sg-search {
+  width: 100%;
+  padding-left: 36px !important;
+}
+
+[dir="rtl"] .sg-search {
+  padding-left: 10px !important;
+  padding-right: 36px !important;
+}
+
+.sg-filter {
+  width: 130px;
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   TABLE
+============================================================ */
+
+/* Scroll hint */
+.sg-scroll-hint {
+  display: none;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  OUTER wrapper: forces LTR on itself so the browser
+  treats left-edge as the scroll start — fixes RTL page scroll bug.
+*/
+.sg-table-outer {
+  direction: ltr;
+  width: 100%;
+}
+
+/*
+  INNER wrapper: this is what actually scrolls.
+  Must be display:block and overflow-x:scroll.
+*/
+.sg-table-wrap {
+  display: block;
+  width: 100%;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+
+.sg-table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+  background: var(--card-color);
+  color: var(--text-color);
+  direction: ltr;
+  touch-action: pan-x;   /* tell mobile browser: horizontal swipe is mine */
+}
+
+.sg-table thead {
+  background: var(--primary-dark);
+}
+
+.sg-table th {
+  padding: 13px 14px;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.sg-table td {
+  padding: 12px 14px;
+  text-align: center;
+  font-size: 0.88rem;
+  border-bottom: 1px solid var(--border-light);
+  white-space: nowrap;
+}
+
+.sg-table tbody tr:nth-child(even) {
+  background: var(--surface-color);
+}
+
+.sg-table tbody tr:hover {
+  background: var(--primary-xlight);
+}
+
+/* Status badges */
+.sg-badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.sg-badge.pass    { background: #dcfce7; color: #15803d; }
+.sg-badge.average { background: #fef9c3; color: #854d0e; }
+.sg-badge.fail    { background: #fee2e2; color: #dc2626; }
+
+
+/* ============================================================
+   DOWNLOAD
+============================================================ */
+.sg-download-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.sg-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.22s, transform 0.18s, box-shadow 0.22s;
+  box-shadow: 0 4px 14px rgba(22,163,74,0.3);
+}
+
+.sg-download-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(22,163,74,0.35);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 768px) {
+  .sg-banner { min-height: 240px; }
+  .sg-banner-content .header-logo { width: 56px; }
+  .sg-banner-content h1 { font-size: 1.4rem; }
+
+  /* Show scroll hint */
+  .sg-scroll-hint { display: flex; }
+
+  /* Ensure outer wrapper never clips */
+  .sg-table-outer { overflow: visible; }
+
+  /* Keep controls side by side but shrink filter */
+  .sg-controls { flex-wrap: nowrap; }
+  .sg-filter   { width: 110px; }
+
+  .sg-download-btn { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .sg-main    { padding: 20px 12px 48px; gap: 16px; }
+  .sg-filter  { width: 100px; font-size: 0.82rem; }
+  .sg-search  { font-size: 0.85rem; }
+}
+
+/* ================= CONTROLS ================= */
+.grades-controls {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.search-input, .filter-select {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  min-width: 150px;
+  flex: 1;
+}
+
+/* ================= TABLE WRAPPER (KEY FIX) ================= */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+
+/* ================= TABLE ================= */
+.grades-table {
+  width: 100%;
+  min-width: 800px; /* keeps horizontal scroll */
+  border-collapse: collapse;
+  background: var(--card-color);
+  color: var(--text-color);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.grades-table th {
+  color: #f1f7ff;
+  background: var(--primary-dark);
+  padding: 12px 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.grades-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-light);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.grades-table tr:nth-child(even) {
+  background: var(--surface-color);
+}
+
+.grades-table tr:hover {
+  background: var(--primary-xlight);
+}
+
+
+
+/* ================= WHATSAPP ================= */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 55px;
+  height: 55px;
+  background-color: #01ac2c;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  z-index: 9999;
+
+  cursor: grab;
+}
+
+.whatsapp-float img {
+  width: 28px;
+  height: 28px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .grades-controls {
+    flex-direction: column;
+  }
+
+  .grades-table {
+    min-width: 750px;
+  }
+
+  .page-header.grades-header {
+    height: 220px;
+  }
+}
+
+
+.download-wrapper {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.download-btn {
+  margin-top: 20px;
+  padding: 10px 22px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(22,163,74,0.35);
+}
+
+.grades-table {
+  direction: ltr;
+}
+
+.grades-table th,
+.grades-table td {
+  text-align: center;
+}

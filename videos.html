@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
+  <title>Learning Videos - Darul Abrār International Online Institute</title>
+  <link rel="stylesheet" href="master.css">
+  <link rel="stylesheet" href="videos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="master-nav">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="Darul Abrār Logo">
+        <span>Darul Abrār</span>
+      </a>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" data-translate="Home">Home</a>
+        <a href="about.html" data-translate="About">About</a>
+        <a href="courses.html" data-translate="Courses">Courses</a>
+        <a href="register.html" data-translate="Register">Register</a>
+        <a href="students-dashboard.html" data-translate="Dashboard">Dashboard</a>
+        <a href="videos.html" class="active" data-translate="Videos">Videos</a>
+        <a href="payment.html" data-translate="Payment">Payment</a>
+        <a href="schedule.html" data-translate="Schedule">Schedule</a>
+        <a href="contact.html" data-translate="Contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================================================
+       PAGE BANNER
+  ================================================ -->
+  <header class="page-banner" style="background-image: url('background-resources.jpg');">
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <img src="logo.png" alt="Darul Abrār Logo" class="header-logo">
+      <p class="banner-eyebrow" data-translate="Members Only">Members Only</p>
+      <h1 data-translate="Learning Videos">Learning Videos</h1>
+      <p data-translate="Access course videos based on your active subscription.">
+        Access course videos based on your active subscription.
+      </p>
+    </div>
+  </header>
+
+  <!-- ================================================
+       VIDEOS MAIN
+  ================================================ -->
+  <main class="videos-page">
+
+    <!-- Breadcrumb — hidden at level 0, shown by JS at deeper levels -->
+    <nav class="drill-breadcrumb" id="drillBreadcrumb" aria-label="Video navigation" style="display:none;"></nav>
+
+    <!-- Loading state -->
+    <div class="videos-loading" id="videosLoading">
+      <div class="loading-spinner"></div>
+      <p data-translate="Loading your videos...">Loading your videos...</p>
+    </div>
+
+    <!-- Drill container — JS renders folder grid or video grid here -->
+    <div id="drillContainer" style="display:none;"></div>
+
+    <!-- Empty state -->
+    <div class="videos-empty" id="videosEmpty" style="display:none;">
+      <i class="fa-solid fa-film"></i>
+      <h3 data-translate="No Videos Available">No Videos Available</h3>
+      <p data-translate="No videos have been uploaded yet for your level. Please check back later.">
+        No videos have been uploaded yet for your level. Please check back later.
+      </p>
+    </div>
+
+  </main>
+
+  <!-- ================================================
+       VIDEO MODAL
+  ================================================ -->
+  <div id="videoModal" class="video-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close video">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-video-wrap">
+        <iframe id="youtubeFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p data-translate="Darul Abrār International Online Institute">Darul Abrār International Online Institute</p>
+    <p>
+      <span data-translate="Email">Email</span>: darainonline2@gmail.com &nbsp;|&nbsp;
+      <span data-translate="Phone: +234 810 521 5518">Phone: +234 810 521 5518</span>
+    </p>
+    <p id="footerCopyright"></p>
+    <a href="privacy.html" data-translate="Privacy Policy">Privacy Policy</a>
+  </footer>
+
+  <a href="https://wa.me/2348105215518" class="whatsapp-float" target="_blank" rel="noopener">
+    <img src="whatsapp-icon.png" alt="WhatsApp">
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('show');
+    }
+    document.addEventListener('click', function (e) {
+      const nav = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      if (!nav.contains(e.target) && !hamburger.contains(e.target)) nav.classList.remove('show');
+    });
+
+    /* Modal close — both X button and backdrop click */
+    document.getElementById('modalClose').addEventListener('click', () => {
+      document.getElementById('videoModal').classList.remove('open');
+      document.getElementById('youtubeFrame').src = '';
+    });
+
+    document.getElementById('videoModal').addEventListener('click', function (e) {
+      if (e.target === this) {
+        this.classList.remove('open');
+        document.getElementById('youtubeFrame').src = '';
+      }
+    });
+  </script>
+  <script src="videos.js"></script>
+  <script src="translate.js"></script>
+</body>
+</html>

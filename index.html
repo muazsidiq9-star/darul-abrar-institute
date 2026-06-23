@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
+  <title>Darul Abrār International Online Institute - Home</title>
+  <link rel="stylesheet" href="master.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="course-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="master-nav">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="Darul Abrār Logo">
+        <span>Darul Abrār</span>
+      </a>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active" data-translate="Home">Home</a>
+        <a href="about.html" data-translate="About">About</a>
+        <a href="courses.html" data-translate="Courses">Courses</a>
+        <a href="register.html" data-translate="Register">Register</a>
+        <a href="students-dashboard.html" data-translate="Dashboard">Dashboard</a>
+        <a href="payment.html" data-translate="Payment">Payment</a>
+        <a href="contact.html" data-translate="Contact">Contact</a>
+        <a href="login.html" class="login-btn" data-translate="Log in">Log in</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================================================
+       HERO SECTION
+  ================================================ -->
+  <header class="home-header">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="background-all.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <img src="logo.png" alt="Darul Abrār Logo" class="header-logo">
+
+      <p class="hero-eyebrow" data-translate="Online • Arabic • Islamic Sciences">Online &bull; Arabic &bull; Islamic Sciences</p>
+
+      <h1 data-translate="Darul Abrār International Online Institute">
+        Darul Abrār International Online Institute
+      </h1>
+
+      <p class="hero-sub" data-translate="Structured online Arabic classes for beginners, intermediate and advanced learners, guided by qualified teachers.">
+        Structured online Arabic classes for beginners, intermediate and advanced learners, guided by qualified teachers.
+      </p>
+
+      <div class="cta-group">
+        <a href="register.html" class="cta-btn pulse" data-translate="Get Started">Get Started</a>
+        <a href="login.html" class="cta-btn cta-outline" data-translate="Log In">Log In</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================================================
+       STATS STRIP
+  ================================================ -->
+  <section class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <span class="stat-num">1200+</span>
+        <span class="stat-label" data-translate="Students Enrolled">Students Enrolled</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">4</span>
+        <span class="stat-label" data-translate="Levels of Study">Levels of Study</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">100%</span>
+        <span class="stat-label" data-translate="Online & Flexible">Online &amp; Flexible</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">10+</span>
+        <span class="stat-label" data-translate="Countries Represented">Countries Represented</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       HIGHLIGHT VIDEOS  (moved up — first impression)
+  ================================================ -->
+  <section class="home-videos">
+    <div class="section-label" data-translate="See Us in Action">See Us in Action</div>
+    <h2 data-translate="Watch Our Highlights">Watch Our Highlights</h2>
+    <p data-translate="See how Darul Abrār brings learning to life for students across the globe.">
+      See how Darul Abrār brings learning to life for students across the globe.
+    </p>
+    <div class="videos-grid">
+      <div class="video-card">
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/90bn6gFRaq"
+                  title="Institute Tour" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p data-translate="Institute Tour">Institute Tour</p>
+      </div>
+      <div class="video-card">
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/Vc1B5ZXfu7"
+                  title="Class Experience" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p data-translate="Experience Our Arabic Classes">Experience Our Arabic Classes</p>
+      </div>
+      <div class="video-card">
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/3ekiKUc5o0"
+                  title="Student Testimonials" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p data-translate="Hear from Our Students">Hear from Our Students</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       WHY CHOOSE US
+  ================================================ -->
+  <section class="features">
+    <div class="section-label" data-translate="Our Strengths">Our Strengths</div>
+    <h2 data-translate="Why Choose Darul Abrār?">Why Choose Darul Abrār?</h2>
+
+    <div class="cards-grid">
+
+      <div class="feature-card">
+        <div class="icon-circle green">
+          <i class="fa-solid fa-chalkboard-user"></i>
+        </div>
+        <h3 data-translate="Expert Teachers">Expert Teachers</h3>
+        <p data-translate="Learn from qualified and passionate Arabic educators with deep Islamic knowledge.">
+          Learn from qualified and passionate Arabic educators with deep Islamic knowledge.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon-circle orange">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+        <h3 data-translate="Flexible Online Learning">Flexible Online Learning</h3>
+        <p data-translate="Access courses anytime, anywhere, on your own schedule.">
+          Access courses anytime, anywhere, on your own schedule.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon-circle teal">
+          <i class="fa-solid fa-book-open"></i>
+        </div>
+        <h3 data-translate="Comprehensive Curriculum">Comprehensive Curriculum</h3>
+        <p data-translate="From Qur'anic Arabic to conversational fluency — all levels covered.">
+          From Qur'anic Arabic to conversational fluency &mdash; all levels covered.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon-circle green">
+          <i class="fa-solid fa-users"></i>
+        </div>
+        <h3 data-translate="Global Community">Global Community</h3>
+        <p data-translate="Join a worldwide community of learners united by a love for Arabic and Islam.">
+          Join a worldwide community of learners united by a love for Arabic and Islam.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon-circle orange">
+          <i class="fa-solid fa-globe"></i>
+        </div>
+        <h3 data-translate="Internationally Recognised">Internationally Recognised</h3>
+        <p data-translate="Earn certificates respected across borders for Arabic and Islamic studies.">
+          Earn certificates respected across borders for Arabic and Islamic studies.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon-circle teal">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+        <h3 data-translate="Modern Teaching Methods">Modern Teaching Methods</h3>
+        <p data-translate="Interactive lessons designed to boost retention, confidence and love for the language.">
+          Interactive lessons designed to boost retention, confidence and love for the language.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon-circle green">
+          <i class="fa-solid fa-clock"></i>
+        </div>
+        <h3 data-translate="Self-Paced Options">Self-Paced Options</h3>
+        <p data-translate="Learn at your own speed with recorded lessons and practice materials.">
+          Learn at your own speed with recorded lessons and practice materials.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon-circle orange">
+          <i class="fa-solid fa-award"></i>
+        </div>
+        <h3 data-translate="Proven Results">Proven Results</h3>
+        <p data-translate="Hundreds of students have successfully mastered Arabic and Islamic sciences with us.">
+          Hundreds of students have successfully mastered Arabic and Islamic sciences with us.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================
+       TESTIMONIALS
+  ================================================ -->
+  <section class="testimonials">
+    <div class="section-label" data-translate="Student Voices">Student Voices</div>
+    <h2 data-translate="What Our Students Say">What Our Students Say</h2>
+
+    <div class="testimonial-slider">
+      <div class="testimonial-track" id="testimonialTrack">
+
+        <div class="testimonial-slide">
+          <div class="avatar-circle">H</div>
+          <div class="t-flag-name">
+            <span class="t-flag">🇳🇬</span>
+            <span class="t-name">Hafsah</span>
+          </div>
+          <p class="t-role" data-translate="Student">Student</p>
+          <div class="quote-icon-big"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="t-text" data-translate="I improved my Arabic in just 3 months! The teachers are amazing and very patient.">
+            I improved my Arabic in just 3 months! The teachers are amazing and very patient.
+          </p>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="avatar-circle">O</div>
+          <div class="t-flag-name">
+            <span class="t-flag">🇦🇪</span>
+            <span class="t-name">Omar</span>
+          </div>
+          <p class="t-role" data-translate="Student">Student</p>
+          <div class="quote-icon-big"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="t-text" data-translate="Flexible classes and practical lessons make learning fun and easy.">
+            Flexible classes and practical lessons make learning fun and easy.
+          </p>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="avatar-circle">F</div>
+          <div class="t-flag-name">
+            <span class="t-flag">🇪🇬</span>
+            <span class="t-name">Fatima</span>
+          </div>
+          <p class="t-role" data-translate="Student">Student</p>
+          <div class="quote-icon-big"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="t-text" data-translate="The community and support kept me motivated throughout my learning journey.">
+            The community and support kept me motivated throughout my learning journey.
+          </p>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="avatar-circle">A</div>
+          <div class="t-flag-name">
+            <span class="t-flag">🇬🇧</span>
+            <span class="t-name">Ahmad</span>
+          </div>
+          <p class="t-role" data-translate="Student">Student</p>
+          <div class="quote-icon-big"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="t-text" data-translate="The Qur'an and Arabic lessons are well-structured and easy to follow. I now feel confident understanding Islamic texts.">
+            The Qur'an and Arabic lessons are well-structured and easy to follow. I now feel confident understanding Islamic texts.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="slider-dots" id="testimonialDots">
+        <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+        <button class="dot" data-index="1" aria-label="Slide 2"></button>
+        <button class="dot" data-index="2" aria-label="Slide 3"></button>
+        <button class="dot" data-index="3" aria-label="Slide 4"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       CALL TO ACTION
+  ================================================ -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2 data-translate="Begin Your Arabic Journey Today">Begin Your Arabic Journey Today</h2>
+      <p data-translate="Join thousands of learners worldwide and take the first step towards understanding the Qur'an and Islamic sciences.">
+        Join thousands of learners worldwide and take the first step towards understanding the Qur'an and Islamic sciences.
+      </p>
+      <a href="register.html" class="cta-btn pulse" data-translate="Register Now — It's Free">Register Now &mdash; It's Free</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p data-translate="Darul Abrār International Online Institute">Darul Abrār International Online Institute</p>
+    <p>
+      <span data-translate="Email">Email</span>: darainonline2@gmail.com &nbsp;|&nbsp;
+      <span data-translate="Phone: +234 810 521 5518">Phone: +234 810 521 5518</span>
+    </p>
+    <p id="footerCopyright"></p>
+    <a href="privacy.html" data-translate="Privacy Policy">Privacy Policy</a>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/2348105215518" class="whatsapp-float" target="_blank" rel="noopener">
+    <img src="whatsapp-icon.png" alt="WhatsApp">
+  </a>
+
+  <!-- SCRIPTS -->
+  <script>
+    
+
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('show');
+    }
+
+    document.addEventListener('click', function (e) {
+      const nav = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+        nav.classList.remove('show');
+      }
+    });
+
+    /* Scroll-reveal for cards */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.feature-card, .testimonial-slide, .stat-item, .video-card')
+      .forEach(el => observer.observe(el));
+
+    /* Testimonial auto-sliding carousel */
+    (function () {
+      const track = document.getElementById('testimonialTrack');
+      const dots = document.querySelectorAll('#testimonialDots .dot');
+      const slides = document.querySelectorAll('.testimonial-slide');
+      if (!track || !slides.length) return;
+
+      let current = 0;
+      let timer;
+
+      function goTo(i) {
+        current = (i + slides.length) % slides.length;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dots.forEach(d => d.classList.remove('active'));
+        dots[current].classList.add('active');
+      }
+
+      function nextSlide() {
+        goTo(current + 1);
+      }
+
+      function startAuto() {
+        timer = setInterval(nextSlide, 4500);
+      }
+
+      function stopAuto() {
+        clearInterval(timer);
+      }
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          goTo(parseInt(dot.dataset.index, 10));
+          stopAuto();
+          startAuto();
+        });
+      });
+
+      const slider = track.closest('.testimonial-slider');
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', startAuto);
+
+      startAuto();
+    })();
+  </script>
+  <script src="translate.js"></script>
+</body>
+</html>

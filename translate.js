@@ -3142,6 +3142,71 @@ NEW FILES START HERE
   "No books yet":         "لا توجد كتب بعد",
   "No videos yet":        "لا توجد فيديوهات بعد",
 
+  // ================================================================
+// translate.js DICT entries — add these to your existing DICT object
+// Covers: courses.html (new cards), course-hifz.html, course-holiday.html
+// ================================================================
+
+// --- courses.html: new group title & filter button ---
+"Special Programs": "البرامج الخاصة",
+"Children": "الأطفال",
+
+// --- courses.html: Hifz card ---
+"Qur'anic Memorization Program": "برنامج حفظ القرآن الكريم",
+"A structured memorization program under the supervision of qualified Qur'anic reciters, using a recognized curriculum and proven system.": "برنامج حفظ منظَّم تحت إشراف قُرَّاء مؤهَّلين، وفق منهج معتمد ونظام حفظ فعَّال.",
+
+// --- courses.html: Holiday card ---
+"Children's Holiday Program": "برنامج الأطفال الصيفي",
+"An engaging holiday program for children covering Qur'anic recitation, Adhkaar, Arabic letters, and Islamic manners.": "برنامج إجازة تفاعلي للأطفال يشمل تلاوة القرآن والأذكار والحروف العربية والآداب الإسلامية.",
+
+// ================================================================
+// course-hifz.html
+// ================================================================
+
+"A structured Hifz journey under the supervision of qualified Qur'anic reciters, using a widely recognized curriculum and proven memorization system.": "رحلة حفظ منظَّمة تحت إشراف قُرَّاء مؤهَّلين، بمنهج معتمد على نطاق واسع ونظام حفظ مجرَّب.",
+"About This Program": "عن هذا البرنامج",
+"This program is a dedicated Qur'anic memorization (Hifz) course designed for students who wish to commit the Qur'an to memory under proper guidance. Students are supervised by experienced and certified Qur'anic reciters who employ a widely recognized curriculum and an effective, time-tested memorization system. The program accommodates learners at various stages — whether you are just beginning your Hifz journey or continuing from where you left off.": "هذا البرنامج مخصَّص لحفظ القرآن الكريم، ويستهدف الطلاب الراغبين في استظهار كتاب الله تحت إشراف متخصص. يُشرف على الطلاب قُرَّاء متمرِّسون ومعتمَدون يتَّبعون منهجاً معتمَداً ونظاماً فعَّالاً في الحفظ. يستوعب البرنامج المتعلِّمين في مختلف المراحل — سواء كنت في بداية رحلة الحفظ أو مواصلاً لما حفظته.",
+"Program Outline": "محاور البرنامج",
+"Tajweed Foundation": "أسس التجويد",
+"Before memorization begins, students establish or review the rules of Tajweed to ensure every āyah is memorized with correct pronunciation and recitation.": "قبل بدء الحفظ، يُرسِّخ الطلاب قواعد التجويد أو يُراجعونها لضمان حفظ كل آية بنطق وتلاوة صحيحَين.",
+"New Memorization (Hifz Jadeed)": "الحفظ الجديد",
+"Students are assigned new portions of the Qur'an to memorize each session under the direct supervision of their teacher, following a structured daily target.": "يُكلَّف الطلاب بحفظ أجزاء جديدة من القرآن في كل حصة تحت الإشراف المباشر للمعلم، وفق هدف يومي محدَّد.",
+"Revision (Murāja'ah)": "المراجعة",
+"Regular and systematic revision sessions are conducted to strengthen previously memorized portions and ensure long-term retention of the Qur'an.": "تُعقد جلسات مراجعة منتظمة ومنهجية لتثبيت ما تم حفظه سابقاً وضمان استدامة الحفظ.",
+"Teacher Supervision & Feedback": "الإشراف والتوجيه",
+"Each student recites directly to their assigned teacher who provides immediate correction, guidance, and encouragement throughout the program.": "يتلو كل طالب مباشرةً على معلمه المختص الذي يُقدِّم التصحيح الفوري والإرشاد والتشجيع طوال فترة البرنامج.",
+"Progress Tracking & Assessment": "متابعة التقدم والتقييم",
+"Student progress is regularly assessed and recorded. Parents and guardians receive updates on their child's memorization milestones and overall performance.": "يُقيَّم تقدُّم الطالب بانتظام ويُسجَّل. ويتلقى أولياء الأمور تقارير دورية عن إنجازات أبنائهم في الحفظ ومستوى أدائهم العام.",
+"Begin Your Hifz Journey Today": "ابدأ رحلة حفظك اليوم",
+"Join our Qur'anic Memorization Program and take your first step toward preserving the Book of Allah.": "انضم إلى برنامج حفظ القرآن الكريم واخطُ أولى خطواتك نحو صون كتاب الله.",
+
+// ================================================================
+// course-holiday.html
+// ================================================================
+
+"An enriching holiday program designed to engage children in Qur'anic recitation, Adhkaar, Arabic letters, and Islamic character during school holidays.": "برنامج إجازة مثري يهدف إلى إشراك الأطفال في تلاوة القرآن والأذكار والحروف العربية والأخلاق الإسلامية خلال العطل المدرسية.",
+"Holiday Sessions": "حلقات الإجازة",
+"The Children's Holiday Program is designed to engage young learners during school holidays with meaningful Islamic and Arabic education. Rather than leaving children idle during the break, this program fills their time with structured, age-appropriate lessons in Qur'anic recitation, Adhkaar, Arabic letter articulation, and Islamic manners. The program has two classes based on the child's current level of Arabic reading ability.": "صُمِّم برنامج الأطفال الصيفي لإشغال الصغار خلال العطل المدرسية بتعليم إسلامي وعربي هادف. بدلاً من ترك الأطفال دون استثمار وقتهم، يملأ هذا البرنامج أوقاتهم بدروس منظَّمة ومناسبة لأعمارهم في التلاوة والأذكار والحروف والآداب. يشتمل البرنامج على فصلَين بحسب مستوى الطفل في قراءة العربية.",
+"Class 1: Preliminary": "الفصل الأول: المبتدئون",
+"Class 2: Beginner": "الفصل الثاني: المتعلمون",
+"Who Is This Class For?": "لمن هذا الفصل؟",
+"This class is designed for children who cannot yet read Arabic or join Arabic letters. It is the perfect starting point for young beginners who are being introduced to the Arabic script and Islamic basics for the very first time.": "هذا الفصل موجَّه للأطفال الذين لا يستطيعون بعدُ قراءة العربية أو ربط الحروف. إنه نقطة البداية المثالية للمبتدئين الصغار الذين يتعرَّفون للمرة الأولى على الحروف العربية وأسس الإسلام.",
+"Huroof (Arabic Letters)": "الحروف العربية",
+"Children are introduced to all 28 Arabic letters, learning their shapes, names, and correct articulation points (Makharij). Emphasis is placed on recognition and proper pronunciation of each letter in isolation and joined form.": "يتعرَّف الأطفال على الحروف الهجائية الثمانية والعشرين جميعها، ويتعلَّمون أشكالها وأسماءها ومخارجها الصحيحة. ويُركِّز الفصل على التعرُّف على كل حرف ونطقه نطقاً سليماً منفرداً ومتصلاً.",
+"Adhkaar (Remembrance of Allah)": "الأذكار",
+"Students are taught essential daily Adhkaar — including morning and evening remembrances, du'as before eating, sleeping, and entering the home — helping children build a habit of remembering Allah in their daily lives.": "يتعلَّم الطلاب الأذكار اليومية الأساسية — كأذكار الصباح والمساء، والأدعية قبل الطعام والنوم ودخول المنزل — مما يُساعد الأطفال على تربية عادة ذكر الله في حياتهم اليومية.",
+"Akhlāq (Islamic Manners)": "الأخلاق",
+"This subject instills in children the beautiful manners of Islam — including respect for elders, kindness to others, honesty, cleanliness, and gratitude — drawing from the Qur'an and the Sunnah of the Prophet ﷺ.": "تُرسِّخ هذه المادة في الأطفال الأخلاق الإسلامية الفاضلة — كاحترام الكبار والرحمة بالآخرين والصدق والنظافة والشكر — مستمدَّةً من القرآن الكريم وسنة النبي ﷺ.",
+"This class is designed for children who can already read and write in Arabic. Building on that foundation, the Beginner class advances their skills into Qur'anic recitation, Arabic language, and core Islamic beliefs.": "هذا الفصل موجَّه للأطفال القادرين على القراءة والكتابة بالعربية. انطلاقاً من هذا الأساس، يُطوِّر فصل المتعلمين مهاراتهم في التلاوة والعربية وأصول العقيدة الإسلامية.",
+"Qur'anic Recitation": "تلاوة القرآن الكريم",
+"Students practice reading the Qur'an with proper Tajweed rules, focusing on fluency, correct articulation, and developing a love for reciting the words of Allah. Short surahs and selected passages are covered.": "يتدرَّب الطلاب على قراءة القرآن الكريم وفق أحكام التجويد، مع التركيز على الطلاقة وصحة النطق وتنمية محبة تلاوة كلام الله. تشمل المادة قصار السور ومقاطع مختارة.",
+"Arabic Language": "اللغة العربية",
+"Children are introduced to basic Arabic vocabulary, simple sentence construction, and conversational phrases. This lays the groundwork for understanding the Qur'an and Islamic texts in their original language.": "يتعرَّف الأطفال على المفردات العربية الأساسية وتركيب الجمل البسيطة والعبارات التحادثية. يُرسي ذلك الأساسَ لفهم القرآن والنصوص الإسلامية بلغتها الأصيلة.",
+"Tawheed (Islamic Monotheism)": "التوحيد",
+"Students are taught the fundamentals of Tawheed — the Oneness of Allah — in a simple, child-friendly manner. Topics include the names and attributes of Allah, the pillars of faith, and the importance of worshipping Allah alone.": "يتعلَّم الطلاب أسس التوحيد — إفراد الله بالعبادة — بأسلوب بسيط يناسب الأطفال. تشمل الموضوعات أسماء الله وصفاته وأركان الإيمان وأهمية توحيد الله في العبادة.",
+"Enrol Your Child This Holiday": "سجِّل طفلك في هذه الإجازة",
+"Give your child a purposeful and spiritually enriching holiday. Register today to secure their place in the program.": "امنح طفلك إجازةً هادفة وغنيَّة روحياً. سجِّل اليوم لضمان مقعده في البرنامج.",
+
   // ===== DYNAMIC TEMPLATES ===== 
 
 en: {

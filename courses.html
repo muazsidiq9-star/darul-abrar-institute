@@ -56,8 +56,9 @@
     <button class="filter-btn active" data-filter="all" data-translate="All Courses">All Courses</button>
     <button class="filter-btn" data-filter="arabic" data-translate="Arabic Language">Arabic Language</button>
     <button class="filter-btn" data-filter="quran" data-translate="Qur'an & Tafseer">Qur'an &amp; Tafseer</button>
+    <button class="filter-btn" data-filter="special" data-translate="Special Programs">Special Programs</button>
     <button class="filter-btn" data-filter="islamic" data-translate="Islamic Sciences">Islamic Sciences</button>
-    <button class="filter-btn" data-filter="coming" data-translate="Coming Soon">Coming Soon</button>
+    <button class="filter-btn" data-filter="coming" data-translate="All Levels">All Levels</button>
   </div>
 
   <!-- COURSES GRID -->
@@ -139,31 +140,34 @@
 
         <div class="course-card coming-soon" data-category="arabic coming">
           <div class="course-icon muted"><i class="fa-solid fa-comments"></i></div>
-          <div class="course-level-badge coming" data-translate="Coming Soon">Coming Soon</div>
+          <div class="course-level-badge coming" data-translate="All Levels">All Levels</div>
           <h3 data-translate="Conversational Arabic">Conversational Arabic</h3>
           <p data-translate="Focus on real-life speaking skills and practical everyday communication.">Focus on real-life speaking skills and practical everyday communication.</p>
           <div class="card-actions">
-            <span class="btn-unavailable" data-translate="Not Available Yet">Not Available Yet</span>
+            <a href="course-conversational.html" class="btn-explore"><span data-translate="Explore">Explore</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="register.html" class="btn-register" data-translate="Enrol">Enrol</a>
           </div>
         </div>
 
         <div class="course-card coming-soon" data-category="arabic coming">
           <div class="course-icon muted"><i class="fa-solid fa-feather-pointed"></i></div>
-          <div class="course-level-badge coming" data-translate="Coming Soon">Coming Soon</div>
+          <div class="course-level-badge coming" data-translate="Advanced">Advanced</div>
           <h3 data-translate="Arabic Poetry">Arabic Poetry</h3>
           <p data-translate="Discover the beauty of Arabic poetry and its unique expression.">Discover the beauty of Arabic poetry and its unique expression.</p>
           <div class="card-actions">
-            <span class="btn-unavailable" data-translate="Not Available Yet">Not Available Yet</span>
+            <a href="course-poetry.html" class="btn-explore"><span data-translate="Explore">Explore</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="register.html" class="btn-register" data-translate="Enrol">Enrol</a>
           </div>
         </div>
 
         <div class="course-card coming-soon" data-category="arabic coming">
           <div class="course-icon muted"><i class="fa-solid fa-book"></i></div>
-          <div class="course-level-badge coming" data-translate="Coming Soon">Coming Soon</div>
+          <div class="course-level-badge coming" data-translate="Advanced">Advanced</div>
           <h3 data-translate="Arabic Literature">Arabic Literature</h3>
           <p data-translate="Explore classical and modern Arabic literary works.">Explore classical and modern Arabic literary works.</p>
           <div class="card-actions">
-            <span class="btn-unavailable" data-translate="Not Available Yet">Not Available Yet</span>
+            <a href="course-literature.html" class="btn-explore"><span data-translate="Explore">Explore</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="register.html" class="btn-register" data-translate="Enrol">Enrol</a>
           </div>
         </div>
 
@@ -191,16 +195,63 @@
 
         <div class="course-card coming-soon" data-category="quran coming">
           <div class="course-icon muted"><i class="fa-solid fa-magnifying-glass"></i></div>
-          <div class="course-level-badge coming" data-translate="Coming Soon">Coming Soon</div>
+          <div class="course-level-badge coming" data-translate="All Levels">All Levels</div>
           <h3 data-translate="Tafseerul Qur'an">Tafseerul Qur'an</h3>
           <p data-translate="Understand the meaning and interpretation of the Qur'an.">Understand the meaning and interpretation of the Qur'an.</p>
           <div class="card-actions">
-            <span class="btn-unavailable" data-translate="Not Available Yet">Not Available Yet</span>
+            <a href="course-tafseer.html" class="btn-explore"><span data-translate="Explore">Explore</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="register.html" class="btn-register" data-translate="Enrol">Enrol</a>
           </div>
         </div>
 
       </div>
     </div>
+
+    <!-- ============================================================
+     ADD THESE TWO CARDS TO courses.html
+     Suggested placement: after the Qur'an & Tafseer group,
+     as a new group called "Special Programs"
+     ============================================================ -->
+
+    <!-- SPECIAL PROGRAMS GROUP -->
+    <div class="course-group">
+      <h2 class="group-title">
+        <i class="fa-solid fa-star-and-crescent"></i>
+        <span data-translate="Special Programs">Special Programs</span>
+      </h2>
+      <div class="cards-grid">
+
+        <!-- CARD 1: Qur'anic Memorization -->
+        <div class="course-card" data-category="special quran">
+          <div class="course-icon green"><i class="fa-solid fa-book-quran"></i></div>
+          <div class="course-level-badge beginner" data-translate="All Levels">All Levels</div>
+          <h3 data-translate="Qur'anic Memorization Program">Qur'anic Memorization Program</h3>
+          <p data-translate="A structured memorization program under the supervision of qualified Qur'anic reciters, using a recognized curriculum and proven system.">
+            A structured memorization program under the supervision of qualified Qur'anic reciters, using a recognized curriculum and proven system.
+          </p>
+          <div class="card-actions">
+            <a href="course-hifz.html" class="btn-explore"><span data-translate="Explore">Explore</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="register.html" class="btn-register" data-translate="Enrol">Enrol</a>
+          </div>
+        </div>
+
+        <!-- CARD 2: Children's Holiday Program -->
+        <div class="course-card" data-category="special quran islamic arabic">
+          <div class="course-icon orange"><i class="fa-solid fa-children"></i></div>
+          <div class="course-level-badge preliminary" data-translate="Children">Children</div>
+          <h3 data-translate="Children's Holiday Program">Children's Holiday Program</h3>
+          <p data-translate="An engaging holiday program for children covering Qur'anic recitation, Adhkaar, Arabic letters, and Islamic manners.">
+            An engaging holiday program for children covering Qur'anic recitation, Adhkaar, Arabic letters, and Islamic manners.
+          </p>
+          <div class="card-actions">
+            <a href="course-holiday.html" class="btn-explore"><span data-translate="Explore">Explore</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="register.html" class="btn-register" data-translate="Enrol">Enrol</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
 
     <!-- ISLAMIC SCIENCES GROUP -->
     <div class="course-group">
@@ -212,41 +263,45 @@
 
         <div class="course-card coming-soon" data-category="islamic coming">
           <div class="course-icon muted"><i class="fa-solid fa-scale-balanced"></i></div>
-          <div class="course-level-badge coming" data-translate="Coming Soon">Coming Soon</div>
+          <div class="course-level-badge coming" data-translate="All Levels">All Levels</div>
           <h3 data-translate="Al-Fiqh">Al-Fiqh</h3>
           <p data-translate="Study Islamic jurisprudence and practical rulings.">Study Islamic jurisprudence and practical rulings.</p>
           <div class="card-actions">
-            <span class="btn-unavailable" data-translate="Not Available Yet">Not Available Yet</span>
+            <a href="course-fiqh.html" class="btn-explore"><span data-translate="Explore">Explore</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="register.html" class="btn-register" data-translate="Enrol">Enrol</a>
           </div>
         </div>
 
         <div class="course-card coming-soon" data-category="islamic coming">
           <div class="course-icon muted"><i class="fa-solid fa-hand-holding-heart"></i></div>
-          <div class="course-level-badge coming" data-translate="Coming Soon">Coming Soon</div>
+          <div class="course-level-badge coming" data-translate="All Levels">All Levels</div>
           <h3 data-translate="At-Tawheed">At-Tawheed</h3>
           <p data-translate="Learn the fundamentals of Islamic monotheism and Aqeedah.">Learn the fundamentals of Islamic monotheism and Aqeedah.</p>
           <div class="card-actions">
-            <span class="btn-unavailable" data-translate="Not Available Yet">Not Available Yet</span>
+            <a href="course-tawheed.html" class="btn-explore"><span data-translate="Explore">Explore</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="register.html" class="btn-register" data-translate="Enrol">Enrol</a>
           </div>
         </div>
 
         <div class="course-card coming-soon" data-category="islamic coming">
           <div class="course-icon muted"><i class="fa-solid fa-scroll"></i></div>
-          <div class="course-level-badge coming" data-translate="Coming Soon">Coming Soon</div>
+          <div class="course-level-badge coming" data-translate="All Levels">All Levels</div>
           <h3 data-translate="Al-Hadeeth">Al-Hadeeth</h3>
           <p data-translate="Study the sayings and teachings of the Prophet ﷺ.">Study the sayings and teachings of the Prophet ﷺ.</p>
           <div class="card-actions">
-            <span class="btn-unavailable" data-translate="Not Available Yet">Not Available Yet</span>
+            <a href="course-hadeeth.html" class="btn-explore"><span data-translate="Explore">Explore</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="register.html" class="btn-register" data-translate="Enrol">Enrol</a>
           </div>
         </div>
 
         <div class="course-card coming-soon" data-category="islamic coming">
           <div class="course-icon muted"><i class="fa-solid fa-timeline"></i></div>
-          <div class="course-level-badge coming" data-translate="Coming Soon">Coming Soon</div>
+          <div class="course-level-badge coming" data-translate="All Levels">All Levels</div>
           <h3 data-translate="Seerah / Taareekh">Seerah / Taareekh</h3>
           <p data-translate="Study Islamic history and the life of the Prophet ﷺ.">Study Islamic history and the life of the Prophet ﷺ.</p>
           <div class="card-actions">
-            <span class="btn-unavailable" data-translate="Not Available Yet">Not Available Yet</span>
+            <a href="course-seerah-taareekh.html" class="btn-explore"><span data-translate="Explore">Explore</span> <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="register.html" class="btn-register" data-translate="Enrol">Enrol</a>
           </div>
         </div>
 

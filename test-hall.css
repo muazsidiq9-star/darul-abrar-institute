@@ -183,7 +183,7 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  .hall-header      { padding: 14px 16px 12px; top: 56px; }
+  .hall-header      { padding: 14px 16px 12px; }
   #examTitle        { font-size: 1rem; }
   .hall-timer-box   { padding: 8px 14px; min-width: 90px; }
   #time             { font-size: 1.3rem; }
